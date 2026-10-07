@@ -1,0 +1,8 @@
+---
+- name: Verification des serveurs provisionnes par OpenTofu
+  hosts: all_servers
+  gather_facts: no
+  tasks:
+    - name: Afficher les informations recuperees de l'inventaire IaC
+      debug:
+        msg: "Serveur {{ inventory_hostname }} a pour IP {{ ansible_host }} et pour role {{ role }}"

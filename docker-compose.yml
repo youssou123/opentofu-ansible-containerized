@@ -1,0 +1,9 @@
+services:
+  devops-runner:
+    build: .
+    container_name: opentofu-ansible-runner
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    tty: true
+    stdin_open: true
